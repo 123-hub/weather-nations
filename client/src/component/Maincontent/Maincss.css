@@ -1,0 +1,287 @@
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+.container {
+    display: grid;
+    height: 100vh;
+    width: 100%;
+    
+    grid-template-columns: 0.5fr 1fr 0.05fr;
+    grid-template-rows: 0.2fr 0.3fr 0.5fr 0.5fr 0.7fr 0.3fr;
+    grid-template-areas: 
+    "nav nav a"
+    "y ma b"
+    "city main c"
+    "input main d"
+    "search main e"
+    "search mai f";
+
+}
+
+.temp span {
+   font-size: 70px;
+}
+
+
+.brand{
+  grid-area: span;
+  grid-area: nav;
+   text-align: center;
+     
+  color: white;
+  font-size: 20px;
+  padding: 10px;
+  font-family: 'Mochiy Pop P One', sans-serif;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+
+p{
+  grid-area: city;
+  grid-area: city;
+  color: white;
+  text-align: center;
+  justify-self:stretch;
+  align-self: flex-end;
+  font-size: 30px;
+  letter-spacing: 3px;
+  font-family: 'Mochiy Pop P One', sans-serif;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+
+input{
+  grid-area: input;
+  grid-area: input;
+    background-color: rgba(7, 5, 5, 0.8);
+    justify-self: center;
+    align-self: center;
+    color: rgb(255, 255, 255);
+    height:60px;
+    width:200px;
+    border:none;
+    border-radius: 20px;
+    text-align: center;
+    font-size: x-large;
+}
+.button3{
+  grid-area: search;
+  
+    justify-self: center;
+    align-self: flex-start;
+    
+   display: flex;
+    justify-content: center;
+    
+
+  
+}
+
+
+.btn{
+  background-color: rgba(16, 17, 12, 0.57);
+  margin-top: 0px; 
+    border-radius: 20px;
+    border: none;
+     padding: 10px;
+     width: 150px;
+     height: 60px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    text-align: center;
+    
+    cursor: pointer;
+    outline: none;
+    color: rgb(255, 255, 255);
+    border-radius: 15px;
+    box-shadow: 0 9px rgba(51, 42, 42, 0.611);
+}
+
+
+.button1:active , .button2:active {
+  background-color: #79887a9c;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.button1{
+  font-size: 28px;
+}
+
+.button2{
+  font-size: 20px;
+  
+}
+
+.rightinner{
+  grid-area: main;
+  background-color: rgba(4, 4, 4, 0.891);
+  justify-self: stretch;
+  align-self: stretch;
+ 
+  border: 2px solid white;
+  border-radius: 20px;
+  padding: 20px;
+  display: grid;
+  width: auto;
+ height: auto;
+  grid-template-columns: 1.2fr 0.8fr 0.8fr 1.2fr;
+  grid-template-rows: 0.3fr 0.10fr 0.27fr 0.10fr 0.23fr;
+  color: white;
+  box-shadow: 1px 1px 10px 10px rgba(255, 255, 255, 0.562) inset;
+  grid-template-areas:
+  
+  "city  city temp temp"
+  "date  date temp temp"
+  "image  image temp temp"
+  "image image humi wind"
+   "sk    reg   reg  lat"
+  ;
+}
+ 
+.sky {
+  grid-area:sk;
+  justify-self: center;
+  align-self: center;
+  color: white;
+  font-size: 20px;
+  
+  font-family: 'Mochiy Pop P One', sans-serif;
+  text-shadow: 2px 2px 8px #FF0000;
+  text-overflow: hidden;
+
+}
+
+.temp {
+  grid-area: temp;
+  align-self: flex-start;
+  text-overflow: hidden;
+
+}
+.region {
+  grid-area: reg;
+  justify-self: center;
+  align-self: center;
+  font-size: 20px;
+  
+  font-family: 'Mochiy Pop P One', sans-serif;
+  text-shadow: 2px 2px 8px #FF0000;
+  text-overflow: hidden;
+}
+
+.latitudee{
+  grid-area: lat;
+ justify-self:center;
+ align-self: center;
+  
+  font-size: 20px;
+  
+  font-family: 'Mochiy Pop P One', sans-serif;
+  text-shadow: 2px 2px 8px #FF0000;
+  text-overflow: hidden;
+}
+
+.city2{
+   grid-area: city;
+   font-size: 60px;
+   text-overflow: hidden;
+   justify-self: center;
+   align-self: center;
+
+}
+.date{
+  grid-area: date;
+  justify-self: center;
+  align-self: flex-start;
+  text-overflow: hidden;
+
+}
+.image{
+  grid-area: image;
+  justify-self:stretch;
+  align-self: stretch;
+  
+  
+  text-align: center;
+  
+  overflow: hidden
+}
+
+.image img{
+  width: auto;
+  height: 100%;
+}
+/* 
+.image img{
+  flex-shrink: 0;
+  min-width: 100%;
+  min-height: 100%;
+   overflow: hidden;
+} */
+.temp{
+  grid-area: temp;
+  font-size: 180px;
+  
+  align-self: flex-start;
+
+  justify-self:center;
+  align-self: center;
+  text-overflow: hidden;
+
+}
+.wind{
+  grid-area: wind;
+  justify-self:center;
+  align-self: center;
+  text-overflow: hidden;
+}
+.humi{
+  grid-area: humi;
+  justify-self:center;
+  align-self: center;
+  text-overflow: hidden;
+}
+
+
+
+@media only screen and (max-width: 900px){
+  .container{
+      grid-template-columns:1fr;
+      grid-template-rows: 0.2fr 1fr 0.5fr 1fr 2fr;
+      grid-template-areas: 
+      "nav "
+      "city"
+      "input"
+      "search"
+      "main";
+  }
+    .rightinner{
+        grid-template-columns:1fr;
+        grid-template-rows:  0.2fr .1fr .2fr .2fr 0.06fr 0.06fr 0.06fr 0.06fr 0.06fr ;
+       
+        grid-template-areas: 
+         "city"
+         "date"
+         "image"
+         "temp"
+          "humi"
+          "wind"
+          "sk"
+          "reg"
+          "lat"
+         
+      }
+  }
+
+
+
+
+
+  
+
+  
