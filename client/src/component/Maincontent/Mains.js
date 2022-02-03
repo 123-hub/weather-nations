@@ -1,5 +1,6 @@
 import "./Maincss.css";
 import validation from '../../validaton/inputvalidation'
+
 import react, { useState, useEffect } from "react";
 function Mains() {
   const object = {
@@ -38,8 +39,12 @@ function Mains() {
     {
     const response = await fetch(`http://localhost:4000/getdata/${city}`);
     const data = await response.json();
-
+    if(data=="error:{code:1006,message:No matching location found.}")
+    {
+      console.log(data)
     setinitial(data);
+    }else
+    window.alert("enter the required input")
     }
     else 
     window.alert("enter the valid input")

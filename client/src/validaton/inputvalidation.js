@@ -6,7 +6,8 @@ function inputvalidation(cityvalue) {
         
         return false;
     }
-    if (!/[^0-9]/g.test(cityvalue)) {
+        
+    if (/^[A-Za-z]$/g.test(cityvalue)) {
         
         
         return false;
