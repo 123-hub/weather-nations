@@ -1,47 +1,37 @@
-import mongoosse from 'mongoose';
-import datas from '../modals/dataschema.js'
+import mongoosse from "mongoose";
+import datas from "../modals/dataschema.js";
+import dotenv from 'dotenv'
+import fetch from "node-fetch";
 
-import fetch from 'node-fetch';
+dotenv.config({ path: '../config.env' });
 
-export const first = (async (req, res) => {
-  const str = req.params.city;
+export const datacontroller= async (req, res) => {
+  const cityvalue = req.params.city;
 
   //for capitalize the datas
-  const arr = str.split(" ");
+  const arr = cityvalue.split(" ");
   for (var i = 0; i < arr.length; i++) {
     arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
   }
-  const str2 = arr.join(" ");
-
-
+  const capitalizevalue = arr.join(" ");
 
   try {
-    const data = await datas.find({ "location.name": str2 });
-
+    const data = await datas.find({ "location.name": capitalizevalue });
+        
     if (data == "") {
-      const respo = await fetch(`http://api.weatherapi.com/v1/current.json?key=867da91417f94c0cbd4155724222801&q=${str2}&aqi=no`)
-      const dataa = await respo.json();
-      res.send(dataa)
+      const api= process.env.APIKEY
+      const fetcheddata = await fetch(
+        `http://api.weatherapi.com/v1/current.json?key=${api}&q=${capitalizevalue}&aqi=no`
+      );
+      const result = await fetcheddata.json();
 
-    }
-    else {
-      
+      res.send(result);
+    } 
+    else 
+    {
       const result = await res.json(data[0]);
     }
   } catch (err) {
-    res.send("failed to at database level")
+    res.send("failed to at database level");
   }
-
-
-})
-
-
-
-
-
-
-
-
-
-
-
+};

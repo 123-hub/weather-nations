@@ -7,7 +7,7 @@ import router from './router/route.js'
 import mongoose from 'mongoose'
 
 const app = express();
-const port = 4000;
+const port = process.env.PORT || 4000;
 
 dotenv.config({ path: './config.env' });
 
